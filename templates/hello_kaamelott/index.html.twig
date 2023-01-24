@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HelloKaamelottController!{% endblock %}
+
+{% block body %}
+
+    <h1>Hello Kaamelot</h1>
+    
+    <blockquote>
+        {{ citations.citation.citation }}
+        <footer>
+            <cite>- {{ citations.citation.infos.personnage }} - {{ citations.citation.infos.saison }} - {{ citations.citation.infos.episode }} </cite>
+        
+        </footer>
+    </blockquote>
+
+
+{% endblock %}
