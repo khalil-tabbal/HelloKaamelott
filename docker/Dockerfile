@@ -1,6 +1,6 @@
 FROM php:8.1.13-apache
 
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions intl && \
@@ -22,7 +22,7 @@ RUN rm -rf /var/www/vendor && \
     php bin/console cache:clear && \
     php bin/console cache:warmup && \
     chown -R www-data:www-data /var/www
-
+    
 WORKDIR /var/www/
 
 ENTRYPOINT ["bash", "./docker/docker.sh"]
